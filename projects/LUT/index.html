@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- === Header Starts === -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>LUT-AAAI2021</title>
+
+  <link href="./assets/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/font.css" rel="stylesheet" type="text/css">
+  <link href="./assets/style.css" rel="stylesheet" type="text/css">
+</head>
+<!-- === Header Ends === -->
+
+
+<body>
+
+
+<!-- === Home Section Starts === -->
+<div class="section">
+  <!-- === Title Starts === -->
+  <div class="header">
+    <div class="title", style="padding-top: 10pt;">  <!-- Set padding as 10 if title is with two lines. -->
+      Listen, Understand and Translate: <br> Triple Supervision Decouples End-to-end Speech-to-text Translation
+    </div>
+  </div>
+  <!-- === Title Ends === -->
+  <div class="author">
+    <a href="https://github.com/dqqcasia">Qianqian Dong</a><sup>1,2</sup>,&nbsp;
+    <a href="https://github.com/ReneeYe">Rong Ye</a><sup>3</sup>,&nbsp;
+    <a href="https://scholar.google.com/citations?user=hOQ6G6EAAAAJ&hl=en">Mingxuan Wang</a><sup>3</sup>,&nbsp;
+    <a href="https://zhouh.github.io">Hao Zhou</a><sup>3</sup>,&nbsp;
+    <a href="https://dblp.org/pid/224/6091.html">Shuang Xu</a><sup>1</sup>,&nbsp;
+    <a href="https://dblp.org/pid/26/1194.html">Bo Xu</a><sup>1,2</sup>,&nbsp;
+    <a href="https://lileicc.github.io">Lei Li</a><sup>3</sup>
+  </div>
+  <div class="institution">
+      <sup>1</sup>Institute of Automation, Chinese Academy of Sciences,&nbsp;&nbsp;&nbsp;<br>
+      <sup>2</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences,&nbsp;&nbsp;&nbsp;<br>
+      <sup>3</sup>ByteDance AI Lab
+  </div>
+  <div class="link">
+    <a href="https://arxiv.org/abs/2009.09704">[Paper]</a>&nbsp;
+    <a href="https://github.com/dqqcasia/st">[Code]</a>
+  </div>
+  <div class="teaser">
+    <img src="files/lut.png" width="90%">
+  </div>
+</div>
+<!-- === Home Section Ends === -->
+
+
+<!-- === Overview Section Starts === -->
+<div class="section">
+  <div class="title">Overview</div>
+  <div class="body">
+    LUT, Listen-Understand-Translate, is a unified framework with triple supervision to decouple the end-to-end speech-to-text translation task.
+    In addition to the target language sentence translation loss, LUT includes two auxiliary supervising signals to guide the acoustic encoder to extracts
+    acoustic features from the input, and the semantic encoder to extract semantic features relevant to the source transcription text.
+  </div>
+</div>
+<!-- === Overview Section Ends === -->
+
+
+<!-- === Result Section Starts === -->
+<div class="section">
+  <div class="title">Results</div>
+  <div class="body">
+    We do experiments on English-French, English-German and English-Chinese speech translation benchmarks and the
+    results demonstrate the reasonability of LUT. The table below shows the results on English-French.
+    <!-- Adjust the number of rows and columns (EVERY project differs). -->
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td><img src="files/lut_enfr.png" width="80%"></td>
+      </tr>
+    </table>
+
+    Our method is fault-tolerant in the case of incorrect recognition, missing recognition, repeated recognition, and
+    so on during the acoustic modeling.
+    <!-- Adjust the number of rows and columns (EVERY project differs). -->
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td><img src="files/lut_case.png" width="50%"></td>
+      </tr>
+    </table>
+
+<!--    <table width="100%" style="margin: 20pt 0; text-align: center;">-->
+<!--      <tr>-->
+<!--        <video class='play_content' width="400" height="300" src="files/costt_1min.mov"  controls preload></video><br><br>-->
+<!--      </tr>-->
+<!--    </table>-->
+
+
+<!--      -->
+<!--    Demo video here.-->
+<!--    &lt;!&ndash; Adjust the frame size based on the demo (EVERY project differs). &ndash;&gt;-->
+<!--    <div style="position: relative; padding-top: 50%; margin: 20pt 0; text-align: center;">-->
+<!--      <iframe src="https://via.placeholder.com/900x450" frameborder=0-->
+<!--              style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;"-->
+<!--              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--              allowfullscreen></iframe>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+<!-- === Result Section Ends === -->
+
+
+<!-- === Reference Section Starts === -->
+<div class="section">
+  <div class="bibtex">BibTeX</div>
+<pre>
+@inproceedings{dong2021listen,
+  title={Listen, Understand and Translate: Triple Supervision Decouples End-to-end Speech-to-text Translation},
+  author={Qianqian Dong, Rong Ye, Mingxuan Wang, Hao Zhou, Shuang Xu, Bo Xu, Lei Li},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2021}
+}
+
+</pre>
+
+</body>
+</html>
