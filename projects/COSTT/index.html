@@ -77,12 +77,92 @@
     </table>
 
     Our method has obvious structural advantages in solving missed translation, mistranslation, and fault tolerance.
+    <br/>
+    <br/>
     <!-- Adjust the number of rows and columns (EVERY project differs). -->
+<!--    <table width="100%" style="margin: 20pt 0; text-align: center;">-->
+<!--      <tr>-->
+<!--        <td><img src="files/costt_case.png" width="50%"></td>-->
+<!--      </tr>-->
+<!--    </table>-->
+
+    <th style="text-align: center">Case 1</th>
     <table width="100%" style="margin: 20pt 0; text-align: center;">
       <tr>
-        <td><img src="files/costt_case.png" width="50%"></td>
+        <td style="text-align: left"><audio controls="controls" ><source src="files/766-144485-0043.wav" autoplay/>Your browser does not support the audio element.</audio></td>
       </tr>
     </table>
+
+    <table border="0" width="100%" height="150px" cellpadding="4px" cellspacing="40px">
+      <tr>
+        <td>Transcript</td>
+        <td>said the doctor yes</td>
+      </tr>
+      <tr>
+        <td>Target</td>
+        <td>dit le docteur , oui .</td>
+      </tr>
+      <tr>
+        <td>Base ST</td>
+        <td>dit le docteur .</td>
+      </tr>
+      <tr>
+        <td>COSTT</td>
+        <td>&lt;asr&gt; said the doctor yes &lt;ast&gt; dit le doc- teur , oui .</td>
+      </tr>
+    </table>
+    <br/>
+    <th style="text-align: center">Case 2</th>
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td style="text-align: left"><audio controls="controls" ><source src="files/2488-36617-0066.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+      </tr>
+    </table>
+    <table border="0" width="100%" height="150px" cellpadding="4px" cellspacing="40px">
+      <tr>
+        <td>Transcript</td>
+        <td>i rushed aboard</td>
+      </tr>
+      <tr>
+        <td>Target</td>
+        <td>je me pre ́cipitai a` bord.</td>
+      </tr>
+      <tr>
+        <td>Base ST</td>
+        <td>je me pre ́cipitai vers l’ avant .</td>
+      </tr>
+      <tr>
+        <td>COSTT</td>
+        <td>&lt;asr&gt; i rushed aboard &lt;ast&gt; je me pre ́cipitai a` bord .</td>
+      </tr>
+    </table>
+    <br/>
+    <br/>
+    <th style="text-align: center">Case 3</th>
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td style="text-align: left"><audio controls="controls" ><source src="files/766-144485-0098.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+      </tr>
+    </table>
+    <table border="0" width="100%" height="150px" cellpadding="4px" cellspacing="40px">
+      <tr>
+        <td>Transcript</td>
+        <td>is there any news today</td>
+      </tr>
+      <tr>
+        <td>Target</td>
+        <td>y a-t-il des nouvelles aujourd’ hui ?</td>
+      </tr>
+      <tr>
+        <td>Base ST</td>
+        <td>est-ce que j’ ai de ́ja` utilise ́ aujourd’ hui ?</td>
+      </tr>
+      <tr>
+        <td>COSTT</td>
+        <td>&lt;asr&gt; is there any news to day &lt;ast&gt; y a-t- il des nouvelles aujourd’ hui ?</td>
+      </tr>
+    </table>
+    <br/>
 
 <!--    <table width="100%" style="margin: 20pt 0; text-align: center;">-->
 <!--      <tr>-->
