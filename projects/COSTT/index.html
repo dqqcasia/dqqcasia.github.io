@@ -11,6 +11,18 @@
   <link href="./assets/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/font.css" rel="stylesheet" type="text/css">
   <link href="./assets/style.css" rel="stylesheet" type="text/css">
+<!--  <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">-->
+
+  <link rel="stylesheet" type="text/css" href="./assets/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/animate.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/select2.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/perfect-scrollbar.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/util.css">
+  <link rel="stylesheet" type="text/css" href="./assets/main.css">
 </head>
 <!-- === Header Ends === -->
 
@@ -44,9 +56,6 @@
     <a href="https://arxiv.org/abs/2009.09737">[Paper]</a>&nbsp;
     <a href="https://github.com/dqqcasia/st">[Code]</a>
   </div>
-  <div class="teaser">
-    <img src="files/costt.png" width="90%">
-  </div>
 </div>
 <!-- === Home Section Ends === -->
 
@@ -59,6 +68,9 @@
     end-to-end models. As a benefit of explicit multi-phase modeling, COSTT facilitates the use of parallel bilingual
     text corpus, which is difficult for traditional end-to-end ST models.
   </div>
+  <div class="teaser">
+    <img src="files/costt.png" width="90%">
+  </div>
 </div>
 <!-- === Overview Section Ends === -->
 
@@ -66,16 +78,149 @@
 <!-- === Result Section Starts === -->
 <div class="section">
   <div class="title">Results</div>
-  <div class="body">
-    We do experiments on English-French, English-German and English-Chinese speech translation benchmarks and achieve
-    state-of-the-art results on these popular benchmark datasets. The table below shows the results on English-French.
+  <br class="body">
+    We do experiments on Augmented English-French, IWSLT2018 English-German and TED English-Chinese speech translation benchmarks and achieve
+    state-of-the-art results on these popular benchmark datasets. The table below shows the results on Augmented English-French dataset.
     <!-- Adjust the number of rows and columns (EVERY project differs). -->
-    <table width="100%" style="margin: 20pt 0; text-align: center;">
-      <tr>
-        <td><img src="files/costt_enfr.png" width="80%"></td>
-      </tr>
-    </table>
+<!--    <table width="100%" style="margin: 20pt 0; text-align: center;">-->
+<!--      <tr>-->
+<!--        <td><img src="files/costt_enfr.png" width="80%"></td>-->
+<!--      </tr>-->
+<!--    </table>-->
 
+  <br/>
+  <br/>
+  <div class="table100 ver1 m-b-110">
+    <div class="table100-head">
+      <table>
+        <thead>
+        <tr class="row100 head">
+          <th class="cell100 column1">Method</th>
+          <th class="cell100 column2">Enc Pre-train</th>
+          <th class="cell100 column3">Dec Pre-train</th>
+          <th class="cell100 column5">BLEU</th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="table100-body js-pscroll">
+      <table>
+        <tbody>
+        <tr class="row100 body">
+          <td class="cell100 column1">MT system</td>
+          <td class="cell100 column2"></td>
+          <td class="cell100 column3"></td>
+          <td class="cell100 column5"></td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Transformer MT (Liu et al. 2019)</td>
+          <td class="cell100 column2">-</td>
+          <td class="cell100 column3">-</td>
+          <td class="cell100 column5">22.91</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Base ST setting</td>
+          <td class="cell100 column2"></td>
+          <td class="cell100 column3"></td>
+          <td class="cell100 column5"></td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">LSTM ST (B ́erard et al. 2018)</td>
+          <td class="cell100 column2">✗</td>
+          <td class="cell100 column3">✗</td>
+          <td class="cell100 column5">12.90</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">+pre-train+multitask (B ́erard et al. 2018)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✓</td>
+          <td class="cell100 column5">13.40</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">LSTM ST+pre-train (Inaguma et al. 2020)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✓</td>
+          <td class="cell100 column5">16.68</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Transformer+pre-train (Liu et al. 2019)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✓</td>
+          <td class="cell100 column5">14.30</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">+knowledge distillation (Liu et al. 2019)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✓</td>
+          <td class="cell100 column5">17.02</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">TCEN-LSTM (Wang et al. 2020a)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✓</td>
+          <td class="cell100 column5">17.05</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Transformer+ASR pre-train (Wang et al. 2020b)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✗</td>
+          <td class="cell100 column5">15.97</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Transformer+curriculum pre-train (Wang et al. 2020b)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✗</td>
+          <td class="cell100 column5">17.66</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1"><b>COSTT without pre-training</b></td>
+          <td class="cell100 column2">✗</td>
+          <td class="cell100 column3">✗</td>
+          <td class="cell100 column5"><b>17.83</b></td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Expanded ST setting</td>
+          <td class="cell100 column2"></td>
+          <td class="cell100 column3"></td>
+          <td class="cell100 column5"></td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">LSTM+pre-train+SpecAugment (Bahar et al. 2019)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✓</td>
+          <td class="cell100 column5">17.00</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Multilingual ST+PT (Inaguma et al. 2019)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✗</td>
+          <td class="cell100 column5">17.60</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Transformer+ASR pre-train (Wang et al. 2020b)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✗</td>
+          <td class="cell100 column5">16.90</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1">Transformer+curriculum pre-train (Wang et al. 2020b)</td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✗</td>
+          <td class="cell100 column5">18.01</td>
+        </tr>
+        <tr class="row100 body">
+          <td class="cell100 column1"><b>COSTT with pre-training</b></td>
+          <td class="cell100 column2">✓</td>
+          <td class="cell100 column3">✓</td>
+          <td class="cell100 column5"><b>18.23</b></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="title">Cases</div>
     Our method has obvious structural advantages in solving missed translation, mistranslation, and fault tolerance.
     <br/>
     <br/>
@@ -170,16 +315,19 @@
 <!--      </tr>-->
 <!--    </table>-->
 
-
 <!--      -->
 <!--    Demo video here.-->
 <!--    &lt;!&ndash; Adjust the frame size based on the demo (EVERY project differs). &ndash;&gt;-->
-<!--    <div style="position: relative; padding-top: 50%; margin: 20pt 0; text-align: center;">-->
-<!--      <iframe src="https://via.placeholder.com/900x450" frameborder=0-->
-<!--              style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;"-->
-<!--              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
-<!--              allowfullscreen></iframe>-->
-<!--    </div>-->
+</div>
+
+<div class="section">
+    <div class="title">Videos</div>
+    <div style="position: relative; padding-top: 50%; margin: 20pt 0; text-align: center;">
+      <iframe src="https://slideslive.com/38949209/consecutive-decoding-for-speechtotext-translation?ref=account-79821-history" frameborder=0
+              style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
 <!--  </div>-->
 </div>
 <!-- === Result Section Ends === -->
@@ -197,6 +345,6 @@
 }
 
 </pre>
-
+</div>
 </body>
 </html>

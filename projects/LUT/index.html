@@ -11,6 +11,18 @@
   <link href="./assets/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/font.css" rel="stylesheet" type="text/css">
   <link href="./assets/style.css" rel="stylesheet" type="text/css">
+<!--  <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">-->
+
+  <link rel="stylesheet" type="text/css" href="./assets/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/animate.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/select2.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/perfect-scrollbar.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/util.css">
+  <link rel="stylesheet" type="text/css" href="./assets/main.css">
 </head>
 <!-- === Header Ends === -->
 
@@ -45,9 +57,6 @@
     <a href="https://arxiv.org/abs/2009.09704">[Paper]</a>&nbsp;
     <a href="https://github.com/dqqcasia/st">[Code]</a>
   </div>
-  <div class="teaser">
-    <img src="files/lut.png" width="90%">
-  </div>
 </div>
 <!-- === Home Section Ends === -->
 
@@ -60,6 +69,9 @@
     In addition to the target language sentence translation loss, LUT includes two auxiliary supervising signals to guide the acoustic encoder to extracts
     acoustic features from the input, and the semantic encoder to extract semantic features relevant to the source transcription text.
   </div>
+  <div class="teaser">
+    <img src="files/lut.png" width="90%">
+  </div>
 </div>
 <!-- === Overview Section Ends === -->
 
@@ -68,26 +80,177 @@
 <div class="section">
   <div class="title">Results</div>
   <div class="body">
-    We do experiments on English-French, English-German and English-Chinese speech translation benchmarks and the
-    results demonstrate the reasonability of LUT. The table below shows the results on English-French.
+    We do experiments on Augmented English-French, IWSLT2018 English-German and TED English-Chinese speech translation benchmarks and the
+    results demonstrate the reasonability of LUT. The table below shows the results on Augmented English-French dataset.
     <!-- Adjust the number of rows and columns (EVERY project differs). -->
-    <table width="100%" style="margin: 20pt 0; text-align: center;">
-      <tr>
-        <td><img src="files/lut_enfr.png" width="80%"></td>
-      </tr>
-    </table>
-
-    Our method is fault-tolerant in the case of incorrect recognition, missing recognition, repeated recognition, and
-    so on during the acoustic modeling.
+<!--    <table width="100%" style="margin: 20pt 0; text-align: center;">-->
+<!--      <tr>-->
+<!--        <td><img src="files/lut_enfr.png" width="80%"></td>-->
+<!--      </tr>-->
+<!--    </table>-->
     <br/>
     <br/>
+    <div class="table100 ver1 m-b-110">
+      <div class="table100-head">
+        <table>
+          <thead>
+          <tr class="row100 head">
+            <th class="cell100 column1">Method</th>
+            <th class="cell100 column2">Enc Pre-train</th>
+            <th class="cell100 column3">Dec Pre-train</th>
+            <th class="cell100 column4">greedy</th>
+            <th class="cell100 column5">beam</th>
+          </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="table100-body js-pscroll">
+        <table>
+          <tbody>
+          <tr class="row100 body">
+            <td class="cell100 column1">MT system</td>
+            <td class="cell100 column2"></td>
+            <td class="cell100 column3"></td>
+            <td class="cell100 column4"></td>
+            <td class="cell100 column5"></td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Transformer MT (Liu et al. 2019)</td>
+            <td class="cell100 column2">-</td>
+            <td class="cell100 column3">-</td>
+            <td class="cell100 column4">21.35</td>
+            <td class="cell100 column5">22.91</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Base ST setting</td>
+            <td class="cell100 column2"></td>
+            <td class="cell100 column3"></td>
+            <td class="cell100 column4"></td>
+            <td class="cell100 column5"></td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">LSTM ST (B ́erard et al. 2018)</td>
+            <td class="cell100 column2">✗</td>
+            <td class="cell100 column3">✗</td>
+            <td class="cell100 column4">12.30</td>
+            <td class="cell100 column5">12.90</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">+pre-train+multitask (B ́erard et al. 2018)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✓</td>
+            <td class="cell100 column4">12.60</td>
+            <td class="cell100 column5">13.40</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">LSTM ST+pre-train (Inaguma et al. 2020)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✓</td>
+            <td class="cell100 column4">-</td>
+            <td class="cell100 column5">16.68</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Transformer+pre-train (Liu et al. 2019)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✓</td>
+            <td class="cell100 column4">13.89</td>
+            <td class="cell100 column5">14.30</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">+knowledge distillation (Liu et al. 2019)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✓</td>
+            <td class="cell100 column4">14.96</td>
+            <td class="cell100 column5">17.02</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">TCEN-LSTM (Wang et al. 2020a)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✓</td>
+            <td class="cell100 column4">-</td>
+            <td class="cell100 column5">17.05</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Transformer+ASR pre-train (Wang et al. 2020b)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✗</td>
+            <td class="cell100 column4">-</td>
+            <td class="cell100 column5">15.97</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Transformer+curriculum pre-train (Wang et al. 2020b)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✗</td>
+            <td class="cell100 column4">-</td>
+            <td class="cell100 column5">17.66</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1"><b>LUT without pre-training</b></td>
+            <td class="cell100 column2">✗</td>
+            <td class="cell100 column3">✗</td>
+            <td class="cell100 column4"><b>16.70</b></td>
+            <td class="cell100 column5"><b>17.75</b></td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Expanded ST setting</td>
+            <td class="cell100 column2"></td>
+            <td class="cell100 column3"></td>
+            <td class="cell100 column4"></td>
+            <td class="cell100 column5"></td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">LSTM+pre-train+SpecAugment (Bahar et al. 2019)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✓</td>
+            <td class="cell100 column4">-</td>
+            <td class="cell100 column5">17.00</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Multilingual ST+PT (Inaguma et al. 2019)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✗</td>
+            <td class="cell100 column4">-</td>
+            <td class="cell100 column5">17.60</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Transformer+ASR pre-train (Wang et al. 2020b)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✗</td>
+            <td class="cell100 column4">-</td>
+            <td class="cell100 column5">16.90</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1">Transformer+curriculum pre-train (Wang et al. 2020b)</td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✗</td>
+            <td class="cell100 column4">-</td>
+            <td class="cell100 column5">18.01</td>
+          </tr>
+          <tr class="row100 body">
+            <td class="cell100 column1"><b>LUT with pre-training</b></td>
+            <td class="cell100 column2">✓</td>
+            <td class="cell100 column3">✗</td>
+            <td class="cell100 column4"><b>17.55</b></td>
+            <td class="cell100 column5"><b>18.34</b></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <!-- Adjust the number of rows and columns (EVERY project differs). -->
 <!--    <table width="100%" style="margin: 20pt 0; text-align: center;">-->
 <!--      <tr>-->
 <!--        <td><img src="files/lut_case.png" width="50%"></td>-->
 <!--      </tr>-->
 <!--    </table>-->
-
+  </div>
+</div>
+  <div class="section">
+    <div class="title">Cases</div>
+    Our method is fault-tolerant in the case of incorrect recognition, missing recognition, repeated recognition, and
+    so on during the acoustic modeling.
+    <br/>
+    <br/>
     <th style="text-align: center">Case 1</th>
     <table width="100%" style="margin: 20pt 0; text-align: center;">
       <tr>
@@ -172,20 +335,22 @@
 <!--      </tr>-->
 <!--    </table>-->
 
-
 <!--      -->
 <!--    Demo video here.-->
 <!--    &lt;!&ndash; Adjust the frame size based on the demo (EVERY project differs). &ndash;&gt;-->
-<!--    <div style="position: relative; padding-top: 50%; margin: 20pt 0; text-align: center;">-->
-<!--      <iframe src="https://via.placeholder.com/900x450" frameborder=0-->
-<!--              style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;"-->
-<!--              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
-<!--              allowfullscreen></iframe>-->
-<!--    </div>-->
+</div>
+</div>
+<div class="section">
+  <div class="title">Videos</div>
+    <div style="position: relative; padding-top: 50%; margin: 20pt 0; text-align: center;">
+      <iframe src="https://slideslive.com/38949368/listen-understand-and-translate-triple-supervision-decouples-endtoend-speechtotext-translation?ref=account-79851-latest" frameborder=0
+              style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
 <!--  </div>-->
 </div>
 <!-- === Result Section Ends === -->
-
 
 <!-- === Reference Section Starts === -->
 <div class="section">
@@ -199,6 +364,6 @@
 }
 
 </pre>
-
+</div>
 </body>
 </html>
